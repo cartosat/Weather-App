@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Weather2.0</string>
+    <string name="cloud">clear</string>
+    <string name="Search_activity">Search</string>
+    <string name="Five_Day_activity">5Day</string>
+    <string name="Details">Week Data</string>
+    <string name="Search">Search</string>
+    <string name="degreec">°C</string>
+    <string name="windSpeed">WindSpeed</string>
+    <string name="Humidity">Humidity</string>
+    <string name="Windmill">Wind Mill</string>
+    <string name="API_Key">b6907d289e10d714a6e88b30761fae22</string>
+</resources>
