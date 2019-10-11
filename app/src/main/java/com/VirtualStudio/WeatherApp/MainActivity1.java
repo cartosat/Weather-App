@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -23,7 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity1 extends AppCompatActivity {
     TextView t1_tempa,t1_citee,t1_speed,t1_pressure,t1_time;
     private Button button1;
     private Button button2;
@@ -32,15 +33,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main1);
 
         button1 = (Button) findViewById(R.id.buttonSearch);
         button2 = (Button) findViewById(R.id.button5Day);
 
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        TextClock time=(TextClock)findViewById(R.id.time);
 
-        String time = format.format(cal.getTime());
 
 
 
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        find_whe();
+        find_wheather();
 
 
 
@@ -79,8 +78,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent2=new Intent(this,Search.class);
         startActivity(intent2);
     }
-    public void find_whe(){
-        String url="https://openweathermap.org/data/2.5/weather?q=pune&appid=b6907d289e10d714a6e88b30761fae22";
+    public void find_wheather(){
+
+        String header="https://openweathermap.org/data/2.5/weather?q=";
+        String last="&appid=b6907d289e10d714a6e88b30761fae22";
+        String city="pune";
+
+        String url=header+city+last;
         JsonObjectRequest jbr=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
